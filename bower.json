@@ -1,0 +1,20 @@
+{
+  "name": "psd-responsive",
+  "homepage": "https://github.com/contactdani/psd-responsive",
+  "authors": [
+    "Zargar Danish <danishzargar99@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^3.1.1"
+  }
+}

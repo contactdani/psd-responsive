@@ -165,7 +165,7 @@ footer ul h4{
 
 .copyright{
     color: #4e4e4e;
-    border-top: 1px solid #333;
+    border-top: 1px solid grey;
     padding: 10px 0;
     text-align: center;
     clear: both;
@@ -262,7 +262,7 @@ footer ul h4{
         overflow: hidden;
      }
      header nav ul.open{
-        height: auto;
+        height: 50px;
      }
 
      #burger-nav{
