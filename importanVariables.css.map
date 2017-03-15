@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "importanVariables.css",
+  "sources": [
+    "importanVariables.scss"
+  ],
+  "mappings": "AAAA,SAAS,CAAT,CAAS;EACL,OAAO,EAAE,KAAM;EACf,OAAO,EAAE,EAAG;EACZ,KAAK,EAAE,IAAK",
+  "names": []
+}

@@ -4,6 +4,14 @@
         <title>Marble</title>
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width">
+        <script>
+            document.createElement("picture");
+        </script>
+        <script src="bower_components/picturefill/dist/picturefill.js"></script>
+        <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js" async></script>
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     </head>
 
     <body>
@@ -14,19 +22,58 @@
                     <h2>Main Navigation</h2>
                     <div id="burger-nav"></div>
                     <ul>
-                        <li><a href="#" class="current">Home</a></li>
+                        <li><a href="#" class="current"><span class="fa fa-home"></span> Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Journel</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#"><span class="fa fa-spinner"></span> Origin Type <span class="fa fa-caret-down"></span></a>
+                            <ul class="drop-menu menu-01">
+                                <li><a href="">Sabian</a></li>
+                                <li><a href="">Iranian</a></li>
+                                <li><a href="">Suadian</a></li>
+                                <li><a href="">Indian</a></li>
+                                <li><a href="">Canadian</a></li>
+                                <li><a href="">Yemanian</a></li>
+                                <li><a href="">Bangla</a></li>
+                                <li><a href="">Kola</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="fa fa-cog"></span> Service <span class="fa fa-caret-down"></span></a>
+                            <ul class="drop-menu menu-02">
+                                <li><a href="">Replacement</a></li>
+                                <li><a href="">Retracking</a></li>
+                                <li><a href="">Help</a></li>
+                                <li><a href="">Building</a></li>
+                                <li><a href="">Marshall</a></li>
+                                <li><a href="">Greater</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="fa fa-share-alt-square"></span> Connect <span class="fa fa-caret-down"></span></a>
+                            <ul class="drop-menu menu-03">
+                                <li><a href="" style="font-weight: bold;font-family: Trebuchet MS"> Facebook</a></li>
+                                <li><a href=""style="font-weight: bold;font-family: Trebuchet MS"> Twitter</a></li>
+                                <li><a href="" style="font-weight: bold;font-family: Trebuchet MS"> LinkedIn</a></li>
+                                <li><a href=""  style="font-weight: bold;font-family: Trebuchet MS"> Instagram</a></li>
+                                <li><a href=""  style="font-weight: bold;font-family: Trebuchet MS"> Google+</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="fa fa-phone-square"></span> Contact <span class="fa fa-caret-down"></span></a>
+                            <ul class="drop-menu menu-04">
+                                <li><a href=""  style="font-weight: bold;font-family: Trebuchet MS"> Mobile</a></li>
+                                <li><a href=""  style="font-weight: bold;font-family: Trebuchet MS"> Landline</a></li>
+                                <li><a href=""  style="font-weight: bold;font-family: Trebuchet MS"> Email</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </header>      <!-- End of Header-->
 
         <div id="main-banner">
-            <img src="images/banner.jpg" alt="">
+            <picture>
+                <source media="(max-width: 980px)" srcset="images/banner-m.jpg">
+                <source media="(max-width: 768px)" srcset="images/banner-sm.jpg">
+                <source media="(max-width: 480px)" srcset="images/banner-xs.jpg">
+                <img src="images/banner.jpg" alt="banner">
+            </picture>
         </div>         <!-- End of Main-->
 
         <main class="wrapper">

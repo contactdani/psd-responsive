@@ -1,0 +1,515 @@
+@import 'mixins.scss';
+* {
+    font-family: Trebuchet MS;
+}
+
+
+/* line 4, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* line 8, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+    color: #4e4e4e;
+    
+}
+
+
+/* line 11, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+body {
+    background-color: #f7f7f7;
+}
+
+
+/* line 14, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+.wrapper {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+
+/* line 20, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+header {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    h1 {
+        margin: 0;
+        text-indent: -100000px;
+        background: url(images/logo.png) no-repeat;
+        width: 125px;
+        float: left;
+    }
+    nav {
+        float: right;
+    }
+    &:after {
+        @include clearFix();
+    }
+    nav li {
+        margin-left: 25px;
+        list-style-type: none;
+        float: left;
+        margin-top: 10px;
+        
+    }
+    nav h2 {
+        text-indent: -10000px;
+        margin: 0;
+        line-height: 0;
+    }
+    nav a {
+        text-decoration: none;
+        margin: 0;
+        padding: 12px 20px;
+        color: #4e4e4e;
+        transition: 0.6s all;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    nav a.current {
+        color: darkcyan;
+        transition: 0.6s all;
+    }
+    nav a.current:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+}
+
+/*////////--- Adding Dropdwon Menus---/////////*/
+
+
+ul.drop-menu li {
+    display: none;
+    float: none;
+    width: 150px;
+    padding: 12px 14px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 -18px;
+    background-color: #D3D3D3;
+    color: white;
+    a {
+        color: #4e4e4e;
+        
+    }
+    &:nth-child(1) {
+        margin-top: 40px;
+    }
+}
+
+li:hover > ul.drop-menu li {
+    display: block;
+    text-decoration: none;
+    color: white;    
+}
+
+///////*---------Menu---------- 1*/////////
+
+li:hover > ul.drop-menu.menu-01 {
+    perspective: 1000px;
+    li {
+        opacity: 0;
+        @for $i from 1 through 8{
+            &:nth-child(#{$i}){
+                animation: menu1 300ms (200ms * $i)-300 ease-in-out forwards;       
+            }   
+        }
+
+    }
+}
+@keyframes menu1 {
+    0% {
+        opacity: 0;
+        transform:rotateY(-90deg) translateY(30px);
+    }
+    50% {
+        opacity: 0.4; transform: rotateY(0deg)
+    }
+    100% {
+        opacity: 1; transform: rotateY(0deg)
+    }
+}
+
+///////*---------Menu-----------2*/////////
+
+li:hover > ul.drop-menu.menu-02 {
+    perspective: 1000px;
+    li {
+        opacity: 0;
+        @for $i from 1 through 8{
+            &:nth-child(#{$i}){
+                animation: menu2 300ms (200ms * $i)-300 ease-in-out forwards;       
+            }   
+        }
+
+    }
+}
+@keyframes menu2 {
+    0% {
+        opacity: 0;
+        transform:rotateX(90deg);
+    }
+    50% {
+        opacity: 0.4; transform: rotateX(0deg)
+    }
+    100% {
+        opacity: 1; transform: rotateX(0deg)
+    }
+}
+
+///////*---------Menu---------- 3*/////////
+
+li:hover > ul.drop-menu.menu-03 {
+    perspective: 1000px;
+    li {
+        opacity: 0;
+        transform-origin: top right;
+        @for $i from 1 through 8{
+            &:nth-child(#{$i}){
+                animation: menu3 300ms (200ms * $i)-300 ease-in-out forwards;       
+            }   
+        }
+
+    }
+}
+@keyframes menu3 {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) translateX(30px)
+    }
+    
+    100% {
+        opacity: 1; transform: rotate(0deg) translateX(0px)
+    }
+}
+
+///////*---------Menu---------- 4*/////////
+
+li:hover > ul.drop-menu.menu-04 {
+    perspective: 1000px;
+    li {
+        opacity: 0;
+        @for $i from 1 through 5{
+            &:nth-child(#{$i}){
+                animation: menu4 300ms (200ms * $i)-300 ease-in-out forwards;       
+            }   
+        }
+
+    }
+}
+@keyframes menu4 {
+    0% {
+        opacity: 0;
+        transform:scale(0.2) translateY(30px);
+    }
+    50% {
+        opacity: 0.4; transform: scale(0.6) translateY(-30px);
+    }
+    100% {
+        opacity: 1; transform: scale(1);
+    }
+}
+
+
+
+
+#main-banner {
+    max-height: 500px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+
+/* line 128, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#selling-points {
+    margin-top: 60px;
+    ul li {
+        float: left;
+        width: 21%;
+        margin-left: 1%;
+        list-style-type: none;
+        padding: 15px;
+        text-align: center;
+    }
+    img {
+        transition: all 1.1s;
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+    
+    &:after {
+        @include clearFix();
+    }
+}
+#latest-works {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1.5px solid grey;
+}
+
+
+/* line 155, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#latest-works h2 {
+    width: 400px;
+    text-align: center;
+    color: white;
+    background: #4e4e4e;
+    margin: 0 auto;
+    padding: 12px 42px;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 20px;
+}
+
+
+/* line 165, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#latest-works ul li {
+    float: left;
+    width: 31%;
+    list-style-type: none;
+    padding: 1%;
+    text-align: center;
+}
+
+
+/* line 172, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#latest-works ul img {
+    width: 100%;
+    transition: 1.2s all;
+}
+
+
+/* line 176, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#latest-works img:hover {
+    transform: scale(1.1);
+}
+
+
+/* line 179, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#latest-works:after {
+    @include clearFix();
+}
+
+
+/* line 184, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+#quote {
+    margin: 0 auto;
+    background: url(images/quote.png) no-repeat center top;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    margin-top: 20px;
+    color: #4e4e4e;
+}
+
+
+/* line 193, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+footer:after {
+    @include clearFix();
+}
+
+
+/* line 198, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+footer {
+    background-color: #1d1d1d;
+    border-top: 5px solid black;
+}
+
+
+/* line 202, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+footer ul {
+    list-style-type: none;
+    float: left;
+    width: 22%;
+    margin-left: 1%;
+    padding: 1%;
+    line-height: 1.3em;
+}
+
+
+/* line 210, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+footer ul h4 {
+    font-size: 20px;
+}
+
+
+/* line 214, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+
+.copyright {
+    color: #4e4e4e;
+    border-top: 1px solid #333;
+    padding: 10px 0;
+    text-align: center;
+    clear: both;
+}
+
+
+/*Media-query for Tablets max-width: 1060px*/
+
+@media screen and (max-width: 960px) {
+    /* line 225, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #selling-points ul li {
+        width: 40%;
+        padding: 0 4%;
+    }
+    /* line 229, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav a {
+        padding: 0;
+    }
+}
+
+
+/*Media-query for Smaller-Tablets max-width: 668px*/
+
+@media screen and (max-width: 768px) {
+    /* line 237, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header h1 {
+        margin: 0 auto;
+        float: none;
+    }
+    /* line 241, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav {
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+    /* line 246, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav li {
+        float: left;
+        margin: 10px auto;
+        width: 13%;
+        padding-left: 15px;
+        text-align: center;
+    }
+    /* line 253, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #quote {
+        width: 90%;
+        padding: 40px 5%;
+    }
+    /* line 257, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    footer ul {
+        width: 45%;
+    }
+    /* line 260, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    footer ul:nth-child(odd) {
+        clear: both;
+    }
+    /* line 263, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #latest-works ul li {
+        width: 90%;
+        float: none;
+        text-align: center;
+        padding: 0 5%;
+    }
+}
+
+
+/*Media-query for Smart Phones max-width:480px*/
+
+@media screen and (max-width: 480px) {
+    /* line 273, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #selling-points ul li {
+        width: 80%;
+        padding: 0 10%;
+        margin: 20px 0;
+    }
+    /* line 278, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #latest-works h2 {
+        width: 50%;
+    }
+    /* line 282, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #latest-works ul {
+        width: 80%;
+        padding: 0 10%;
+        margin: 30px 0;
+        
+    }
+    /* line 287, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #quote {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    /* line 291, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    footer ul {
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+    /* line 295, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    footer ul h4 {
+        text-align: center;
+    }
+    /* line 298, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav li {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    /* line 304, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header .wrapper {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    /* line 310, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav a {
+        display: block;
+        padding: 10px;
+        margin: 2px;
+        border-bottom: 1px solid lightgrey;
+    }
+    /* line 316, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+    }
+    /* line 320, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    header nav ul.open {
+        height: auto;
+    }
+    /* line 324, C:/Users/danish/Documents/GitHub/psd-responsive/SCSS/style.scss */
+    #burger-nav {
+        height: 60px;
+        width: 100%;
+        background: url(images/burger.png) no-repeat 98% center;
+        cursor: pointer;
+    }
+}
